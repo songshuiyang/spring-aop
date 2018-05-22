@@ -8,11 +8,13 @@
 	http://www.springframework.org/schema/aop/spring-aop.xsd">
 
     <aop:config proxy-target-class="true">
+        <!--使用<aop:aspect>元素标签定义切面, 其内部可以定义多个增强-->
         <aop:aspect ref="adviceMethods">
             <aop:after method="afterExecution" pointcut="execution(* com.aop.learn.service.*.*(..))"/>
         </aop:aspect>
     </aop:config>
 
+    <!--adviceMethods bean, 该bean是增强方法所在的类-->
     <bean id="adviceMethods" class="com.aop.learn.advice.UserAdvice"/>
     <bean id="userService" class="com.aop.learn.service.impl.UserServiceImpl"/>
 </beans>
