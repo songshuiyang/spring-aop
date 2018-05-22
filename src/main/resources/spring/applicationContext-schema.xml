@@ -4,11 +4,15 @@
        xmlns:aop="http://www.springframework.org/schema/aop"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
     http://www.springframework.org/schema/beans/spring-beans.xsd
-
-
 	http://www.springframework.org/schema/aop
 	http://www.springframework.org/schema/aop/spring-aop.xsd">
 
-    
+    <aop:config proxy-target-class="true">
+        <aop:aspect ref="adviceMethods">
+            <aop:after method="afterExecution" pointcut="execution(* com.aop.learn.service.*.*(..))"/>
+        </aop:aspect>
+    </aop:config>
 
+    <bean id="adviceMethods" class="com.aop.learn.advice.UserAdvice"/>
+    <bean id="userService" class="com.aop.learn.service.impl.UserServiceImpl"/>
 </beans>

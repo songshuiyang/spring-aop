@@ -20,7 +20,6 @@ public class BaseTest extends AbstractJUnit4SpringContextTests {
     public Logger logger = LoggerFactory.getLogger(this.getClass());
 
     public BaseTest() {
-        logger.info("----------------------------启动测试类------------------------");
     }
 
 }
