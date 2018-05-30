@@ -16,6 +16,6 @@
     <!--基于@AspectJ切面的驱动器,自动为Spring容器中匹配@AspectJ切面的Bean创建代理，完成切面织入-->
     <aop:aspectj-autoproxy/>
 
-    <import resource="applicationContext-schema.xml"/>
+    <!--<import resource="applicationContext-schema.xml"/>-->
 
 </beans>
