@@ -21,7 +21,7 @@ public class UserAdvice {
     public void afterExecution(JoinPoint joinPoint) {
         String methodName = joinPoint.getSignature().getName();
         SimpleDateFormat matter = new SimpleDateFormat("yyyy年MM月dd日 HH时mm分ss秒");
-        logger.info("在" + matter.format(new Date())+ "执行了【" +methodName  + "】方法");
+        logger.info("小明在" + matter.format(new Date())+ "执行了【" +methodName  + "】方法");
 
     }
 }
